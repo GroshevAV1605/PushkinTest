@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Викторина</title>
+        <link rel=stylesheet href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="header-text">Викторина по А.С. Пушкину</h1>
+            <form class="lang-form">
+                <p>
+                    <input type="radio" id="lang-ru" checked name="lang">
+                    <label for="lang-ru">Ru</label>
+                </p>
+                <p>
+                    <input type="radio" id="lang-en" name="lang">
+                    <label for="lang-en">En</label>
+                </p>
+            </form>
+        </div>
+        <div class="content">
+            <div id="start">
+                <p style="font-size: 45px; margin: 0 0 40px 0">Выберите тему:</p><br>
+                <button class="test-btn" onclick="check(0,0)">Поэма «Руслан и Людмила»</button>
+                <button class="test-btn" onclick="check(0,1)">Роман «Евгений Онегин»</button>
+                <button class="test-btn" onclick="check(0,2)">Сказка о рыбаке и рыбке</button>
+                <button class="test-btn" onclick="check(0,3)">Сказка о царе Салтане</button>
+                <button class="test-btn" onclick="check(0,4)">Сказка о мёртвой царевне</button>
+                <button class="test-btn" onclick="check(0,5)">Сказка о попе и работнике его Балде</button>
+            </div>
+            <p id="result"></p>				
+            <p id="question"></p>
+            <button onclick="check(1)" class="option" id="option1"></button>
+            <button onclick="check(2)" class="option" id="option2"></button>
+            <button onclick="check(3)" class="option" id="option3"></button>
+            
+            <!--<button id="start" class="start-btn" onclick="check(0)">Начать</button>-->
+            <button id="end" class="end-btn" style="display: none" onclick="window.location.href=window.location.href">Начать сначала</button>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
