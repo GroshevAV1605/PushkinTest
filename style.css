@@ -157,6 +157,7 @@ button:hover{
     border-radius: 2px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
     display: none;
+    text-align: left;
 }
 
 #result{
