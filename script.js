@@ -40,6 +40,30 @@ var cur_answer = 0;
 var cur_test = 0;
 var count_answer;
 
+function na(){
+    cur_answer++;
+        if(cur_answer < count_answer){
+            $('#option1')[0].innerHTML=data_array[cur_test][cur_answer][1];
+            $('#option2')[0].innerHTML=data_array[cur_test][cur_answer][2];
+            $('#option3')[0].innerHTML=data_array[cur_test][cur_answer][3];
+            $('#question')[0].innerHTML=data_array[cur_test][cur_answer][0];
+            $('.option').css('background-color','#DCDCDC');
+            $('#option1').attr('onclick','check(1)');
+            $('#option2').attr('onclick','check(2)');
+            $('#option3').attr('onclick','check(3)');
+        }
+        else{
+            $('#option1')[0].style.display = 'none';
+            $('#option2')[0].style.display = 'none';
+            $('#option3')[0].style.display = 'none';
+            $('#question')[0].style.display = 'none';
+            
+            $('#result')[0].style.backgroundColor = 'white';
+            $('#result')[0].style.fontSize = '35px';
+            $('#result')[0].innerHTML = 'Правильных ответов: ' + plus + ' из ' + count_answer;
+        }
+}
+
 function check(num, test){
     test = test || cur_answer;
     if (num==0){
@@ -59,31 +83,23 @@ function check(num, test){
         $('#end')[0].style.display = 'block';
     }
     else{
+        $('.option').attr('onclick','');
         if(num == data_array[cur_test][cur_answer][4]){
             plus++;
-            $('#result')[0].innerHTML='Верно!';
-            $('#result')[0].style.backgroundColor = 'rgba(25,158,94, 0.5)';
+            /*$('#result')[0].innerHTML='Верно!';
+            $('#result')[0].style.backgroundColor = 'rgba(25,158,94, 0.5)';*/
+            $('#option'+num).animate({backgroundColor: 'rgba(25,158,94, 0.5)'}, 1000, function(){na()});
         }
         else{
-            $('#result')[0].innerHTML='Неверно! Правильный ответ: ' + data_array[cur_test][cur_answer][data_array[cur_test][cur_answer][4]];
-            $('#result')[0].style.backgroundColor = 'rgba(218,81,69, 0.5)';
+            /*$('#result')[0].innerHTML='Неверно! Правильный ответ: ' + data_array[cur_test][cur_answer][data_array[cur_test][cur_answer][4]];
+            $('#result')[0].style.backgroundColor = 'rgba(218,81,69, 0.5)';*/
+            $('#option'+num).animate({backgroundColor: 'rgba(218,81,69, 0.5)'}, 1000, function(){na()});
+            $('#option'+data_array[cur_test][cur_answer][4]).animate({backgroundColor: 'rgba(25,158,94, 0.5)'}, 1000, function(){na()});
         }
-        cur_answer++;
-        if(cur_answer < count_answer){
-            $('#option1')[0].innerHTML=data_array[cur_test][cur_answer][1];
-            $('#option2')[0].innerHTML=data_array[cur_test][cur_answer][2];
-            $('#option3')[0].innerHTML=data_array[cur_test][cur_answer][3];
-            $('#question')[0].innerHTML=data_array[cur_test][cur_answer][0];
-        }
-        else{
-            $('#option1')[0].style.display = 'none';
-            $('#option2')[0].style.display = 'none';
-            $('#option3')[0].style.display = 'none';
-            $('#question')[0].style.display = 'none';
-            
-            $('#result')[0].style.backgroundColor = 'white';
-            $('#result')[0].style.fontSize = '35px';
-            $('#result')[0].innerHTML = 'Правильных ответов: ' + plus + ' из ' + count_answer;
-        }
+        
     }
 }
+
+/*$(".option").click(function(){
+    $("#option1").animate({backgroundColor: 'rgba(25,158,94, 0.5)'});
+})*/
