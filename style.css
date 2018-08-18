@@ -9,9 +9,14 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-@media (width < height) {
+@media all and (orientation:portrait) {
     body {
         background-image: url(Skazka1.png);
+    }
+}
+@media all and (orientation:landscape) {
+    body {
+        background-image: url(maxresdefault60.png);
     }
 }
 
