@@ -69,7 +69,8 @@ body{
     font-size: 2vw;       
 }
 [type="radio"]{
-    height: 2vw;
+    height: 1.5vw;
+    width: 1.5vw;
 }
 
 form label{
