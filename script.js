@@ -59,7 +59,7 @@ function na(){
             $('#question')[0].style.display = 'none';
             
             $('#result')[0].style.backgroundColor = 'white';
-            $('#result')[0].style.fontSize = '35px';
+            $('#result')[0].style.fontSize = '2vw';
             $('#result')[0].innerHTML = 'Правильных ответов: ' + plus + ' из ' + count_answer;
         }
 }
