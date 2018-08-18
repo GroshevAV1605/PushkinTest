@@ -24,7 +24,6 @@ body{
     background-color: #009387;
     height: 12vw;
     padding-top: 10px;
-    /*min-width: 550px;*/
 }
 
 .header::after{
@@ -66,14 +65,18 @@ body{
 
 .lang-form p{
     margin-top:0;
-    margin-bottom:5px;
+    margin-bottom:0;
+    font-size: 2vw;       
+}
+[type="radio"]{
+    height: 2vw;
 }
 
 form label{
     font-weight: 400;
 }
 
-[type="radio"]:checked,
+/*[type="radio"]:checked,
 [type="radio"]:not(:checked) {
     position: absolute;
     left: -9999px;
@@ -121,7 +124,7 @@ form label{
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
-}
+}*/
 
 button {
     display: block;
