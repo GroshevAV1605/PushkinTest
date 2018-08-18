@@ -9,6 +9,12 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+@media (width < height) {
+    body {
+        background-image: url(Skazka1.png);
+    }
+}
+
 .header{
     background-color: #009387;
     height: 12vw;
